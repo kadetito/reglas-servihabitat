@@ -1,0 +1,17 @@
+.auth__main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #ffffff;
+  height: 100vh;
+  width: 100vw;
+}
+
+.auth__box-content {
+  background-color: #ffffff;
+  box-shadow: 3px 4px 5px 0px $dark-grey;
+  border-radius: 6px;
+  padding: 20px;
+  width: 290px;
+  border: 1px solid #afafaf;
+}

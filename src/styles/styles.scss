@@ -1,0 +1,11 @@
+/* BASE */
+@import "./base/settings";
+@import "./base/base";
+@import "@trendmicro/react-sidenav/dist/react-sidenav.css";
+/* COMPONENTES */
+@import "./components/auth";
+@import "./components/noselected";
+@import "./components/header";
+@import "./components/footer";
+@import "./components/navbar";
+@import "./components/bloques";
