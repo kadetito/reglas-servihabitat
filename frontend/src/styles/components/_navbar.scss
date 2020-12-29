@@ -2,10 +2,133 @@
   width: auto;
 }
 
-.sidenav---sidenav---_2tBP {
-  background-color: #6f99bb;
+.navbar {
+  padding: 6px !important;
 }
 
-i {
-  font-size: 1.75em;
+.sidenav---sidenav---_2tBP {
+  background-color: #307465;
+  top: 55px;
+  width: 154px;
+}
+
+.sidenav---sidenav-toggle---1KRjR {
+  background-color: #ff6600;
+  width: 100%;
+  align-items: center;
+  height: 50px;
+}
+/**** menu collapsable ***/
+
+.sidenav---sidenav-nav---3tvij
+  > .sidenav---sidenav-navitem---uwIJ-
+  > .sidenav---navitem---9uL5T::after {
+  opacity: 1 !important;
+  background: transparent;
+}
+
+/* collapsed */
+.sidenav---collapsed---LQDEv .sidenav---navitem---9uL5T {
+  align-items: center !important;
+  text-align: center !important;
+  width: 100% !important;
+  height: 90px !important;
+  padding-top: 16%;
+}
+
+.sidenav---collapsed---LQDEv .sidenav---navicon---3gCRo {
+  align-items: center !important;
+  text-align: center !important;
+  width: 100% !important;
+}
+
+.sidenav---collapsed---LQDEv i {
+  transition: font-size 0.1s;
+  transition-timing-function: ease-in-out;
+  font-size: 40px;
+  width: 40px;
+  color: #568e81;
+}
+
+.sidenav---collapsed---LQDEv
+  .sidenav---navitem---9uL5T
+  .navbar__link--active
+  i {
+  transition: font-size 0.1s;
+  transition-timing-function: ease-in-out;
+  font-size: 60px;
+  width: 60px;
+  color: #ffffff;
+}
+
+/* expanded */
+.sidenav---expanded---1KdUL .sidenav---navitem---9uL5T {
+  align-items: left !important;
+  text-align: left !important;
+  width: auto !important;
+  height: 70px !important;
+  padding-top: 10px;
+  padding-left: 25px;
+}
+
+.sidenav---expanded---1KdUL .sidenav---navicon---3gCRo {
+  align-items: left !important;
+  text-align: left !important;
+  width: auto !important;
+}
+.sidenav---expanded---1KdUL i {
+  transition: font-size 0.3s;
+  font-size: 20px;
+  width: 20px;
+}
+.linkexpanded {
+  padding-left: 25px;
+}
+
+a.linkexpanded {
+  color: #ffffff;
+  opacity: 1 !important;
+}
+a:hover.linkexpanded {
+  color: #afcbbd;
+  opacity: 1 !important;
+}
+a:visited.linkexpanded {
+  color: #ffffff;
+}
+a:active.linkexpanded {
+  color: #ffffff;
+  opacity: 1 !important;
+}
+
+/*******/
+
+.logotipoheader {
+  margin-left: 45px;
+}
+
+.navbar_blanca {
+  background-color: #ffffff;
+}
+.navbar_blanca a.nav-link {
+  color: #045640 !important;
+}
+.padright {
+  margin-right: 26px;
+}
+@media only screen and (max-width: 992px) {
+  .sidenav---sidenav---_2tBP {
+    background-color: #307465;
+    top: 55px;
+    width: 65px;
+  }
+
+  .sidenav---collapsed---LQDEv .sidenav---navitem---9uL5T {
+    height: 60px !important;
+    padding-top: 12px;
+  }
+
+  .sidenav---collapsed---LQDEv i {
+    font-size: 30px;
+  }
 }

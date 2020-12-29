@@ -8,10 +8,20 @@ html,
 body {
   height: 100vh;
   width: 100vw;
+  background-color: #f2f2f2;
 }
 
 main {
-  padding-left: 60px;
+  padding-left: 0px;
+}
+.paderleft {
+  margin-left: 154px !important;
+}
+
+@media only screen and (max-width: 992px) {
+  .paderleft {
+    margin-left: 65px !important;
+  }
 }
 
 /*** botones **/

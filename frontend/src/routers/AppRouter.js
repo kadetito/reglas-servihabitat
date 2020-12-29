@@ -35,7 +35,7 @@ export const AppRouter = () => {
           />
           <PrivateRoute
             exact
-            path="/"
+            path="/home"
             component={HomeScreen}
             isAuthenticated={!!id_persona}
           />

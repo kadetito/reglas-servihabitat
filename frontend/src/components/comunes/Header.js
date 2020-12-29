@@ -2,6 +2,7 @@ import React from "react";
 import { Nav, Navbar, NavDropdown } from "react-bootstrap";
 import { useDispatch, useSelector } from "react-redux";
 import { startLogout } from "../../actions/auth";
+import logotipo from "../../assets/logotipos/logotipoheader.png";
 
 export const Header = () => {
   const dispatch = useDispatch();
@@ -11,11 +12,13 @@ export const Header = () => {
   };
   return (
     <div className="header__container">
-      <Navbar bg="dark" variant="dark" expand="lg">
-        <Navbar.Brand href="#home">Brand o logo</Navbar.Brand>
+      <Navbar className="navbar_blanca" expand="lg">
+        <Navbar.Brand href="#home">
+          <img className="logotipoheader" src={logotipo} alt="ServiHabitat" />
+        </Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
-          <Nav className="ml-auto">
+          <Nav className="ml-auto padright">
             <Nav.Link href="#home">
               <i className="fas fa-inbox"></i>
             </Nav.Link>

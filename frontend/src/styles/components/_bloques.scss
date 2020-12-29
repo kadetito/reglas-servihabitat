@@ -8,7 +8,7 @@
   margin: 20px;
 }
 .bloque__back {
-  background-color: #f1f0ef;
+  background-color: #afcbbd;
   padding: 12px;
 }
 .bloque_linea {
@@ -65,6 +65,8 @@
   }
 }
 
+/*  BLOQUE ATRIBUTOS   */
+
 .bloque__atributos {
   width: auto;
   margin-left: 12px;
@@ -73,13 +75,16 @@
     font-size: 16px;
     font-weight: bold;
     color: #d1d1d1;
+    margin-left: 15px;
   }
   & h5 {
     font-size: 13px;
     font-weight: bold;
+    color: #0b5949;
   }
 }
 
+/*  BLOQUE ATRIBUTOS   */
 .bloque__caracteristicas {
   width: auto;
   margin-left: 12px;
@@ -88,10 +93,12 @@
     font-size: 16px;
     font-weight: bold;
     color: #d1d1d1;
+    margin-left: 15px;
   }
   & h5 {
     font-size: 13px;
     font-weight: bold;
+    color: #0b5949;
   }
   &.card {
     background-color: transparent;
@@ -108,10 +115,12 @@
     font-size: 16px;
     font-weight: bold;
     color: #d1d1d1;
+    margin-left: 15px;
   }
   & h5 {
     font-size: 13px;
     font-weight: bold;
+    color: #0b5949;
   }
   &.card {
     background-color: transparent;
