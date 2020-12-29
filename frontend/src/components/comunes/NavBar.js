@@ -17,7 +17,7 @@ export const NavBar = () => {
           <NavItem eventKey="home">
             <NavIcon>
               <NavLink to="/home" activeClassName="navbar__link--active">
-                <i class="fas fa-warehouse"></i>
+                <i className="fas fa-warehouse"></i>
               </NavLink>
             </NavIcon>
             <NavText>
@@ -44,7 +44,7 @@ export const NavBar = () => {
                 to="/asignaciones"
                 activeClassName="navbar__link--active"
               >
-                <i class="fas fa-code-branch"></i>
+                <i className="fas fa-code-branch"></i>
               </NavLink>
             </NavIcon>
             <NavText>
@@ -56,7 +56,7 @@ export const NavBar = () => {
           <NavItem eventKey="modulos">
             <NavIcon>
               <NavLink to="/modulos" activeClassName="navbar__link--active">
-                <i class="fas fa-th"></i>
+                <i className="fas fa-th"></i>
               </NavLink>
             </NavIcon>
             <NavText>
@@ -68,7 +68,7 @@ export const NavBar = () => {
           <NavItem eventKey="resultados">
             <NavIcon>
               <NavLink to="/resultados" activeClassName="navbar__link--active">
-                <i class="fas fa-chart-bar"></i>
+                <i className="fas fa-chart-bar"></i>
               </NavLink>
             </NavIcon>
             <NavText>
@@ -83,7 +83,7 @@ export const NavBar = () => {
                 to="/asociaciones"
                 activeClassName="navbar__link--active"
               >
-                <i class="fas fa-chalkboard-teacher"></i>
+                <i className="fas fa-chalkboard-teacher"></i>
               </NavLink>
             </NavIcon>
             <NavText>
@@ -98,7 +98,7 @@ export const NavBar = () => {
                 to="/simulaciones"
                 activeClassName="navbar__link--active"
               >
-                <i class="fab fa-whmcs"></i>
+                <i className="fab fa-whmcs"></i>
               </NavLink>
             </NavIcon>
             <NavText>

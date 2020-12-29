@@ -2,7 +2,7 @@
 import { prepareAtributos } from "../helpers/prepareAtributos";
 
 import { types } from "../types/types";
-import { fetchConToken } from "../helpers/fetch";
+import { fetchConTokenAt } from "../helpers/fetch_atributos";
 
 // const eventAddNew = (event) => ({
 //     type: types.eventAddNew,
@@ -67,7 +67,7 @@ import { fetchConToken } from "../helpers/fetch";
 export const atributoStartLoading = () => {
   return async (dispatch) => {
     try {
-      const resp = await fetchConToken("atributos");
+      const resp = await fetchConTokenAt("atributos");
       const body = await resp.json();
       console.log(body);
       const atributos = prepareAtributos(body.atributos);

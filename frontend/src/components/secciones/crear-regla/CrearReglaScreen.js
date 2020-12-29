@@ -1,7 +1,7 @@
 import { Footer } from "../../comunes/Footer";
 import { Header } from "../../comunes/Header";
 import { NavBar } from "../../comunes/NavBar";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { useTipoInmueble } from "../../../hooks/useTipoInmueble";
 import DropdownType from "react-bootstrap/DropdownButton";
 import Dropdown from "react-bootstrap/Dropdown";
@@ -13,10 +13,12 @@ import { useForm } from "../../../hooks/useForm";
 import { useEffect } from "react";
 import { atributoStartLoading } from "../../../actions/atributos";
 
+import { BloqueTiposInmuebles } from "./bloques/BloqueTiposInmueble";
+
 export const CrearReglaScreen = () => {
   const dispatch = useDispatch();
 
-  //-----------------useEffect
+  //-----------------useEffect Atributos
   useEffect(() => {
     dispatch(atributoStartLoading());
   }, [dispatch]);
@@ -27,7 +29,6 @@ export const CrearReglaScreen = () => {
     reset,
     capturaSelect,
   } = useTipoInmueble(); //usamos el TipoInmueble
-
   //-----------hook useForm
   const [formValues, handleInputChange] = useForm({
     tipoinmueble: "",
@@ -35,9 +36,11 @@ export const CrearReglaScreen = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
   };
-
   const { tipoinmueble } = formValues;
 
+  /**************************** */
+
+  /**************************** */
   return (
     <>
       <Header />
@@ -63,25 +66,14 @@ export const CrearReglaScreen = () => {
                             <div className="col-md-6">
                               <div className="bloque__planminnopad">
                                 <DropdownType
-                                  alignRight
                                   size="lg"
+                                  menuAlign={{ lg: "left" }}
                                   variant="secondary"
                                   title="TIPO DE INMUEBLE"
                                   id="dropdown-menu-align-right"
                                   onSelect={capturaSelect}
                                 >
-                                  <Dropdown.Item eventKey="option-1">
-                                    option-1
-                                  </Dropdown.Item>
-                                  <Dropdown.Item eventKey="option-2">
-                                    option-2
-                                  </Dropdown.Item>
-                                  <Dropdown.Item eventKey="option-3">
-                                    option 3
-                                  </Dropdown.Item>
-                                  <Dropdown.Item eventKey="some link">
-                                    some link
-                                  </Dropdown.Item>
+                                  <BloqueTiposInmuebles />
                                 </DropdownType>
                               </div>
                             </div>

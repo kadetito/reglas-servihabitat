@@ -17,6 +17,8 @@ export const types = {
   eventDeleted: "[event] Event deleted",
   eventLoaded: "[event] Events loaded",
 
+  tiposInmuebleLoaded: "[tiposinmueble] Tipos Inmueble loaded",
+
   authCheckingFinish: "[auth] Finish checking login state",
   authStartLogin: "[auth] Start login",
   authLogin: "[auth] Login",
