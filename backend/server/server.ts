@@ -7,6 +7,7 @@ import jornadas from "../router/router.jornadas";
 import atributos from "../router/router.atributos";
 import fileUpload = require("express-fileupload");
 import cors from "cors";
+import tiposInmuebles from "../router/router.tiposdeinmueble";
 export default class Server {
   public app: express.Application;
   public port: number;
@@ -29,6 +30,7 @@ export default class Server {
     // this.app.use(tareas);
     // this.app.use(jornadas);
     this.app.use(atributos);
+    this.app.use(tiposInmuebles);
   }
   middlewares() {
     this.app.use(cors({ origin: true, credentials: true }));

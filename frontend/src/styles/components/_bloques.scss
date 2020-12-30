@@ -5,11 +5,12 @@
   font-size: 12px;
 }
 .bloque__crear-container {
-  margin: 20px;
+  margin: 0px;
 }
 .bloque__back {
   background-color: #afcbbd;
   padding: 12px;
+  min-height: 200px;
 }
 .bloque_linea {
   border-left: 1px solid #d8d8d8;
@@ -69,8 +70,8 @@
 
 .bloque__atributos {
   width: auto;
-  margin-left: 12px;
-  margin-right: 12px;
+  margin-left: 15px;
+  margin-right: 15px;
   & h4 {
     font-size: 16px;
     font-weight: bold;
@@ -132,8 +133,8 @@
 .bloque__resultados {
   width: auto;
   margin-left: 0px;
-  margin-right: 12px;
-  margin-top: 85px;
+  margin-right: 15px;
+  margin-top: 92px;
   & h4 {
     font-size: 16px;
     font-weight: bold;

@@ -4,12 +4,24 @@ import { useState } from "react";
  * ___________________________________________________________
  */
 export const UseCheckAtributos = (initialState = true) => {
-  const [showAl_Di, setShowAl_Di] = useState(initialState); //open/cierre de alert de los datos
+  const [show, setShow] = useState(false); //open/cierre de alert de los datos
+  const [showAl_Di, setShowAl_Di] = useState(false); //open/cierre de alert de los datos
   const [showAl_Po, setShowAl_Po] = useState(initialState); //open/cierre de alert de los datos
   const [showAl_Lo, setShowAl_Lo] = useState(initialState); //open/cierre de alert de los datos
+
+  const [valueParametro, setValueParametro] = useState(0); //lanzamos el estado inicial del select combo a NADA
+
+  const [valueIdBoton, setValueIdBoton] = useState(false); //lanzamos el estado inicial del select combo a NADA
+
   const [valueDireccion, setValueDireccion] = useState(false); //lanzamos el estado inicial del select combo a NADA
   const [valuePoblacion, setValuePoblacion] = useState(false); //lanzamos el estado inicial del select combo a NADA
   const [valueLocalidad, setValueLocalidad] = useState(false); //lanzamos el estado inicial del select combo a NADA
+
+  //cerramos el mensaje
+  const reset = () => {
+    setShow(false); //colocamos el estado a false
+    setValueIdBoton(false);
+  };
 
   //cerramos el mensaje direccion
   const resetDireccion = () => {
@@ -30,12 +42,13 @@ export const UseCheckAtributos = (initialState = true) => {
   };
 
   const capturaCheck1 = (e) => {
+    console.log(showAl_Di);
     setShowAl_Di(initialState); //devolvemos el estado a true (initial) en la misma funcion de captura
 
-    if (valueDireccion === true) {
-      setValueDireccion(false);
+    if (valueIdBoton === true) {
+      setValueIdBoton(false);
     } else {
-      setValueDireccion(true);
+      setValueIdBoton(true);
     }
   };
 
@@ -57,16 +70,36 @@ export const UseCheckAtributos = (initialState = true) => {
     }
   };
 
+  /*************** CAPTURA DEL EVENTO Y EL PARAMETRO DEL BOTON ********************** */
+  const capturaCheck = (parametro) => {
+    if (valueIdBoton === true) {
+      setValueIdBoton(false);
+      setValueParametro(parametro);
+      setShow(true);
+      console.log(show);
+    } else {
+      setValueIdBoton(true);
+      setValueParametro(parametro);
+      setShow(true);
+    }
+  };
+  /******************************************************************************* */
+
   return {
+    show,
     showAl_Di,
     showAl_Po,
     showAl_Lo,
+    valueIdBoton,
+    valueParametro,
     valueDireccion,
     valuePoblacion,
     valueLocalidad,
+    reset,
     resetDireccion,
     resetPoblacion,
     resetLocalidad,
+    capturaCheck,
     capturaCheck1,
     capturaCheck2,
     capturaCheck3,

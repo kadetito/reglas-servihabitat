@@ -37,7 +37,7 @@ export const BloqueTiposInmuebles = () => {
       <div>
         {data.tiposInmuebles.map((item) => (
           <Dropdown.Item key={item.id} eventKey={item.id}>
-            <i class="fas fa-caret-right"></i> {item.name}
+            <i className="fas fa-caret-right"></i> {item.name}
           </Dropdown.Item>
         ))}
       </div>

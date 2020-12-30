@@ -3,7 +3,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.listAtributos = void 0;
+exports.listAtributosByIdTipo = exports.listAtributos = void 0;
 const mysql_1 = __importDefault(require("../mysql/mysql"));
 function listAtributos(req, res) {
     const objeto = "";
@@ -24,6 +24,27 @@ function listAtributos(req, res) {
     });
 }
 exports.listAtributos = listAtributos;
+function listAtributosByIdTipo(req, res) {
+    const house_id = mysql_1.default.instance.conn.escape(req.params.house_id);
+    const objeto = "";
+    const query = `SELECT * FROM atributos WHERE house_id=${house_id}`;
+    mysql_1.default.ejecutarQuery(query, objeto, (error, atributos) => {
+        if (error) {
+            res.status(400).json({
+                ok: false,
+                warning: "El FBI se dirige a su domicilio",
+                error: error,
+            });
+        }
+        else {
+            res.json({
+                ok: true,
+                atributos: atributos,
+            });
+        }
+    });
+}
+exports.listAtributosByIdTipo = listAtributosByIdTipo;
 // export function createJornada(req: Request, res: Response) {
 //   const objeto: Jornadas = req.body;
 //   const query = `INSERT INTO panel_registro_jornada SET ?`;

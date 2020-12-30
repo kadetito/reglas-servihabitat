@@ -1,7 +1,6 @@
-export interface Atributos {
+export interface TiposInmueble {
   id?: string;
-  id_tipo?: string;
-  nombre: {
+  name: {
     type: string;
     required: [true, "El nombre es obligatorio"];
   };

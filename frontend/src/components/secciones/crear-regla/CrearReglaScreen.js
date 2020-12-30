@@ -29,6 +29,10 @@ export const CrearReglaScreen = () => {
     reset,
     capturaSelect,
   } = useTipoInmueble(); //usamos el TipoInmueble
+
+  //-----------hook useTipoInmueble parqa obtener que atributos mostramos
+  const { showQueTi } = useTipoInmueble(); //usamos el TipoInmueble
+
   //-----------hook useForm
   const [formValues, handleInputChange] = useForm({
     tipoinmueble: "",
@@ -47,77 +51,102 @@ export const CrearReglaScreen = () => {
       <div>
         <NavBar />
         <main>
-          <div className="paderleft">
-            <div className="bloque__crear-container">
-              <div className="row mb-5">
-                <div className="col-12 bloque__crear-acciones">
-                  <i className="fas fa-search smallicon"></i> BUSCAR | CARGAR |
-                  EDITAR
+          <div className="container-fluid">
+            <div className="paderleft">
+              <div className="bloque__crear-container">
+                <div className="row mb-5">
+                  <div className="col-12 bloque__crear-acciones">
+                    <i className="fas fa-search smallicon"></i> BUSCAR | CARGAR
+                    | EDITAR
+                  </div>
                 </div>
-              </div>
 
-              <div className="row">
-                <div className="col-md-9">
-                  <div className="row bloque__selector  mb-3">
-                    <div className="col-md-12  m-0 p-0">
-                      <div className="row">
-                        <div className="col-md-12  m-0 p-0">
-                          <div className="row">
-                            <div className="col-md-6">
-                              <div className="bloque__planminnopad">
-                                <DropdownType
-                                  size="lg"
-                                  menuAlign={{ lg: "left" }}
-                                  variant="secondary"
-                                  title="TIPO DE INMUEBLE"
-                                  id="dropdown-menu-align-right"
-                                  onSelect={capturaSelect}
-                                >
-                                  <BloqueTiposInmuebles />
-                                </DropdownType>
+                <div className="row">
+                  <div className="col-md-9">
+                    <div className="row bloque__selector  mb-3">
+                      <div className="col-md-12  m-0 p-0">
+                        <div className="row">
+                          <div className="col-md-12  m-0 p-0">
+                            <div className="row">
+                              <div className="col-md-6">
+                                <div className="bloque__planminnopad">
+                                  <DropdownType
+                                    size="lg"
+                                    menuAlign={{ lg: "left" }}
+                                    variant="secondary"
+                                    title="TIPO DE INMUEBLE"
+                                    id="dropdown-menu-align-right"
+                                    onSelect={capturaSelect}
+                                  >
+                                    <BloqueTiposInmuebles />
+                                  </DropdownType>
+                                </div>
                               </div>
-                            </div>
-                            <div className="col-md-6 bloque_linea">
-                              <div className="bloque__planmin">
-                                <p>Regla 01 text text text</p>
+                              <div className="col-md-6 bloque_linea">
+                                <div className="bloque__planmin">
+                                  <p>Regla 01 text text text</p>
+                                </div>
                               </div>
                             </div>
                           </div>
                         </div>
                       </div>
                     </div>
-                  </div>
-                  <BloqueAtributos />
-                  <BloqueCaracteristicas />
-                  <BloqueSituaciones />
-                </div>
-                <div className="col-md-3">
-                  <div className="row bloque__resultados">
-                    <div className="col-12  m-0 p-0">
-                      <div className="row">
-                        <div className="col-12 m-0 p-0">
-                          <h4>SELECCIÓN/CARACTERÍSTICAS</h4>
+                    {/*recogemos el tipo de inmueble del selector y mostramos el bloque adecuado
+----------------------------------------------------------------------------*/}
+
+                    <div className="row bloque__atributos">
+                      <div className="  col-md-12  m-0 p-0">
+                        <div className="row">
+                          <div className="col-md-12 m-0 p-0">
+                            <h4>ATRIBUTOS</h4>
+                          </div>
+                        </div>
+                        <div className="row  mb-3">
+                          <div className="col-md-12 bloque__back m-0 p-0">
+                            {showQueTi && valueTipoInmueble ? (
+                              <BloqueAtributos
+                                dataFromParent={valueTipoInmueble}
+                              />
+                            ) : null}
+                          </div>
                         </div>
                       </div>
-                      <div className="row">
-                        <div className="col-12 bloque__back">
-                          <form onSubmit={handleSubmit}>
-                            {showAl_Ti && valueTipoInmueble ? (
-                              <Alert
-                                variant="light"
-                                onClose={reset}
-                                dismissible
-                              >
-                                <p>Tipo de inmueble: {valueTipoInmueble}</p>
-                                <input
-                                  name="tipoinmueble"
-                                  type="hidden"
-                                  value={valueTipoInmueble}
-                                  onChange={handleInputChange}
-                                />
-                              </Alert>
-                            ) : null}
-                          </form>
+                    </div>
+
+                    {/*recogemos el tipo de inmueble del selector y mostramos el bloque adecuado
+----------------------------------------------------------------------------*/}
+                    {/* <BloqueCaracteristicas />
+              <BloqueSituaciones /> */}
+                  </div>
+                  <div className="col-md-3">
+                    <div className="row bloque__resultados">
+                      <div className="col-12  m-0 p-0">
+                        <div className="row">
+                          <div className="col-12 m-0 p-0">
+                            <h4>SELECCIÓN/CARACTERÍSTICAS</h4>
+                          </div>
+                        </div>
+                        <div className="row">
+                          <div className="col-12 bloque__back">
+                            <form onSubmit={handleSubmit}>
+                              {showAl_Ti && valueTipoInmueble ? (
+                                <Alert
+                                  variant="light"
+                                  onClose={reset}
+                                  dismissible
+                                >
+                                  <p>Tipo de inmueble: {valueTipoInmueble}</p>
+                                  <input
+                                    name="tipoinmueble"
+                                    type="hidden"
+                                    value={valueTipoInmueble}
+                                    onChange={handleInputChange}
+                                  />
+                                </Alert>
+                              ) : null}
+                            </form>
+                          </div>
                         </div>
                       </div>
                     </div>
@@ -125,9 +154,9 @@ export const CrearReglaScreen = () => {
                 </div>
               </div>
             </div>
-            <Footer />
           </div>
         </main>
+        <Footer />
       </div>
     </>
   );

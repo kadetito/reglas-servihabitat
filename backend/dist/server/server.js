@@ -19,6 +19,7 @@ const router_usuarios_1 = __importDefault(require("../router/router.usuarios"));
 const router_atributos_1 = __importDefault(require("../router/router.atributos"));
 const fileUpload = require("express-fileupload");
 const cors_1 = __importDefault(require("cors"));
+const router_tiposdeinmueble_1 = __importDefault(require("../router/router.tiposdeinmueble"));
 class Server {
     constructor(puerto) {
         this.port = puerto;
@@ -37,6 +38,7 @@ class Server {
         // this.app.use(tareas);
         // this.app.use(jornadas);
         this.app.use(router_atributos_1.default);
+        this.app.use(router_tiposdeinmueble_1.default);
     }
     middlewares() {
         this.app.use(cors_1.default({ origin: true, credentials: true }));

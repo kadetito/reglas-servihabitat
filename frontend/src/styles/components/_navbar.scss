@@ -1,5 +1,7 @@
 .navbar__container {
-  width: auto;
+  width: 320px;
+  margin: 0px;
+  padding: 0px;
 }
 
 .navbar {
@@ -10,6 +12,8 @@
   background-color: #307465;
   top: 55px;
   width: 154px;
+  height: 100vh;
+  position: fixed !important;
 }
 
 .sidenav---sidenav-toggle---1KRjR {

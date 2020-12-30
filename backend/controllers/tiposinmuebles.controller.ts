@@ -1,11 +1,11 @@
 import { Request, Response } from "express";
 import MySQL from "../mysql/mysql";
-import { Atributos } from "../interfaces/atributos.interface";
+import { TiposInmueble } from "../interfaces/tiposinmuebles.interface";
 
-export function listAtributos(req: Request, res: Response) {
+export function listTiposInmuebles(req: Request, res: Response) {
   const objeto = "";
-  const query = `SELECT * FROM atributos`;
-  MySQL.ejecutarQuery(query, objeto, (error: any, atributos: Object[]) => {
+  const query = `SELECT * FROM tipos_inmuebles`;
+  MySQL.ejecutarQuery(query, objeto, (error: any, tiposInmuebles: Object[]) => {
     if (error) {
       res.status(400).json({
         ok: false,
@@ -15,28 +15,7 @@ export function listAtributos(req: Request, res: Response) {
     } else {
       res.json({
         ok: true,
-        atributos: atributos,
-      });
-    }
-  });
-}
-
-export function listAtributosByIdTipo(req: Request, res: Response) {
-  const house_id = MySQL.instance.conn.escape(req.params.house_id);
-  const objeto = "";
-  const query = `SELECT * FROM atributos WHERE house_id=${house_id}`;
-
-  MySQL.ejecutarQuery(query, objeto, (error: any, atributos: Object[]) => {
-    if (error) {
-      res.status(400).json({
-        ok: false,
-        warning: "El FBI se dirige a su domicilio",
-        error: error,
-      });
-    } else {
-      res.json({
-        ok: true,
-        atributos: atributos,
+        tiposInmuebles: tiposInmuebles,
       });
     }
   });
