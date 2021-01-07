@@ -69,7 +69,7 @@ export const atributoStartLoading = () => {
     try {
       const resp = await fetchConTokenAt("atributos");
       const body = await resp.json();
-      console.log(body);
+      //console.log("atributoStartLoading", body);
       const atributos = prepareAtributos(body.atributos);
       dispatch(atributoLoaded(atributos));
     } catch (error) {

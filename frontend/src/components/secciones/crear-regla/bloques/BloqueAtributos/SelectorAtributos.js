@@ -59,16 +59,16 @@ export const SelectorAtributos = ({ dataToSelector }) => {
     <>
       <div className="row">
         {data.atributos.map((item) => (
-          <div className="col">
+          <div className="col" key={item.id}>
             {
-              <ToggleButtonGroup type="checkbox" defaultValue={valueIdBoton}>
-                <ToggleButton
+              <ToggleButtonGroup key={item.id} type="checkbox">
+                <ToggleButton key={item.id}
                   onChange={(parametro) => capturaCheck(item.id, parametro)}
                   name={item.id}
-                  value={valueIdBoton}
+                 
                   className="btn btn-selectores"
                 >
-                  {item.id}-{item.name}
+                  {item.id}-{item.name} 
                 </ToggleButton>
               </ToggleButtonGroup>
             }

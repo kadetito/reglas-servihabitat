@@ -242,7 +242,7 @@ function revalidarToken(req, res) {
             });
         }
         else {
-            const { id_persona, nombres, email } = usuarios[0];
+            const { id_persona, nombres, imagen, email } = usuarios[0];
             const tokenUser = token_1.default.getJwtToken({
                 nombres: nombres,
                 email: email,
@@ -251,6 +251,7 @@ function revalidarToken(req, res) {
                 ok: true,
                 id_persona,
                 nombres,
+                imagen,
                 email,
                 token: tokenUser,
             });

@@ -43,86 +43,61 @@ export const LoginScreen = () => {
   // };
 
   return (
-    <div className="row">
-      <div className="col-md-12 text-center">
-        <h3>Login</h3>
-        <form onSubmit={handleLogin}>
-          <div className="form-group">
-            <input
-              type="text"
-              className="form-control"
-              placeholder="Correo"
-              name="lEmail"
-              value={lEmail}
-              onChange={handleLoginInputChange}
-            />
+    <>
+      <form onSubmit={handleLogin}>
+        <div className="row mb-4">
+          <div className="col ">
+            <div className="form-inline form-group m-0 p-0  auth__width50 auth__inputs auth__noborder-bottom text-left authinputsmail">
+              <div className="row m-0 p-0">
+                <div className="col-4 m-0  padding-exacto">
+                  <h5 className="auth__label">E-mail:</h5>
+                </div>
+                <div className="col-8 m-0 p-0">
+                  <input
+                    type="text"
+                    id="authinputsmail"
+                    className="form-control auth__no-border "
+                    placeholder="Correo"
+                    name="lEmail"
+                    value={lEmail}
+                    onChange={handleLoginInputChange}
+                  />
+                </div>
+              </div>
+            </div>
+            <div className="form-inline form-group m-0 p-0  auth__width50 auth__inputs text-left authinputspass">
+              <div className="row  m-0 p-0 ">
+                <div className="col-4  m-0   padding-exacto">
+                  <h5 className="auth__label">Contraseña:</h5>
+                </div>
+                <div className="col-8  m-0 p-0">
+                  <input
+                    type="password"
+                    id="authinputspass"
+                    className="form-control auth__no-border "
+                    placeholder="Contraseña"
+                    name="lPassword"
+                    value={lPassword}
+                    onChange={handleLoginInputChange}
+                  />
+                </div>
+              </div>
+            </div>
           </div>
-          <div className="form-group">
-            <input
-              type="password"
-              className="form-control"
-              placeholder="Contraseña"
-              name="lPassword"
-              value={lPassword}
-              onChange={handleLoginInputChange}
-            />
+        </div>
+        <div className="row  mb-5 ">
+          <div className="col-md-6  roboto size12px colorverde">
+            <input type="checkbox" /> Guardar contraseña
           </div>
-          <div className="form-group">
-            <input type="submit" className="btnSubmit" value="Login" />
+          <div className="col-md-6"></div>
+        </div>
+        <div className="row mb-4">
+          <div className="col">
+            <input type="submit" className="auth__btnSubmit" value="Login" />
+            {/* <button className="btn btn-primary btn-naranja-login">Login</button> */}
           </div>
-        </form>
-      </div>
-
-      {/* <div className="col-md-6 login-form-2">
-        <h3>Registro</h3>
-        <form onSubmit={handleRegister}>
-          <div className="form-group">
-            <input
-              type="text"
-              className="form-control"
-              placeholder="Nombre"
-              name="rName"
-              value={rName}
-              onChange={handleRegisterInputChange}
-            />
-          </div>
-          <div className="form-group">
-            <input
-              type="email"
-              className="form-control"
-              placeholder="Correo"
-              name="rEmail"
-              value={rEmail}
-              onChange={handleRegisterInputChange}
-            />
-          </div>
-          <div className="form-group">
-            <input
-              type="password"
-              className="form-control"
-              placeholder="Contraseña"
-              name="rPassword1"
-              value={rPassword1}
-              onChange={handleRegisterInputChange}
-            />
-          </div>
-
-          <div className="form-group">
-            <input
-              type="password"
-              className="form-control"
-              placeholder="Repita la contraseña"
-              name="rPassword2"
-              value={rPassword2}
-              onChange={handleRegisterInputChange}
-            />
-          </div>
-
-          <div className="form-group">
-            <input type="submit" className="btnSubmit" value="Crear cuenta" />
-          </div>
-        </form>
-      </div> */}
-    </div>
+        </div>{" "}
+      </form>
+    </>
   );
 };

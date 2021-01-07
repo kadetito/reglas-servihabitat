@@ -21,6 +21,7 @@ export const fetchConToken = (endpoint, data, method = "GET") => {
   const url = `${baseUrl}/${endpoint}`; //en desarrollo http://localhost:4000/endpoint definido en el backend
   const token = localStorage.getItem("token") || "";
   const prs = localStorage.getItem("prs") || "";
+
   //si no especifico metodo de envio lo dejo en GET
   if (method === "GET") {
     return fetch(url, {

@@ -3,15 +3,16 @@ import { useState } from "react";
  *
  * ___________________________________________________________
  */
-export const UseCheckAtributos = (initialState = true) => {
-  const [show, setShow] = useState(false); //open/cierre de alert de los datos
+
+export const UseCheckAtributos = (initialState = true, estadoInicial = 0) => {
+  const [show, setShow] = useState(initialState); //open/cierre de alert de los datos
   const [showAl_Di, setShowAl_Di] = useState(false); //open/cierre de alert de los datos
   const [showAl_Po, setShowAl_Po] = useState(initialState); //open/cierre de alert de los datos
   const [showAl_Lo, setShowAl_Lo] = useState(initialState); //open/cierre de alert de los datos
 
-  const [valueParametro, setValueParametro] = useState(0); //lanzamos el estado inicial del select combo a NADA
+  const [valueParametro, setValueParametro] = useState(estadoInicial); //lanzamos el estado inicial  a NADA
 
-  const [valueIdBoton, setValueIdBoton] = useState(false); //lanzamos el estado inicial del select combo a NADA
+  const [valueIdBoton, setValueIdBoton] = useState(true); //lanzamos el estado inicial del select combo a NADA
 
   const [valueDireccion, setValueDireccion] = useState(false); //lanzamos el estado inicial del select combo a NADA
   const [valuePoblacion, setValuePoblacion] = useState(false); //lanzamos el estado inicial del select combo a NADA
@@ -72,16 +73,34 @@ export const UseCheckAtributos = (initialState = true) => {
 
   /*************** CAPTURA DEL EVENTO Y EL PARAMETRO DEL BOTON ********************** */
   const capturaCheck = (parametro) => {
-    if (valueIdBoton === true) {
+    if (valueIdBoton === false) {
+      //valor en false
+      setValueParametro(estadoInicial);
+      setValueIdBoton(true);
+      setShow(false);
+      console.log(valueParametro);
+    } else {
+      //valor en true
       setValueIdBoton(false);
       setValueParametro(parametro);
       setShow(true);
-      console.log(show);
-    } else {
-      setValueIdBoton(true);
-      setValueParametro(parametro);
-      setShow(true);
+      console.log(valueParametro);
     }
+
+    // if (valueIdBoton === false) {
+    //   //valor en false
+    //   setValueIdBoton(true);
+    //   parametro = 0;
+    //   setShow(false);
+    //   console.log(valueParametro);
+    // } else {
+    //   //valor en true
+
+    //   setValueIdBoton(false);
+    //   // setValueParametro(parametro);
+    //   setShow(true);
+    //   console.log(valueParametro);
+    // }
   };
   /******************************************************************************* */
 

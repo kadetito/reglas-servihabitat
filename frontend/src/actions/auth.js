@@ -19,6 +19,7 @@ export const startLogin = (email, password) => {
         login({
           id_persona: body.usuario[0].id_persona,
           nombres: body.usuario[0].nombres,
+          imagen: body.usuario[0].imagen,
         })
       );
     } else {
@@ -65,6 +66,7 @@ export const startChecking = () => {
         login({
           id_persona: body.id_persona,
           nombres: body.nombres,
+          imagen: body.imagen,
         })
       );
     } else {
